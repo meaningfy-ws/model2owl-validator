@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://publications.europa.eu/ns/">
+
+    <mapping>
+        <from  qname="epo:Indicator"/>
+        <to  qname="xsd:boolean"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:Date"/>
+        <to  qname="xsd:date"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:DateTime"/>
+        <to  qname="xsd:dateTime"/>
+    </mapping>    
+    <mapping>
+        <from  qname="epo:Numeric"/>
+        <to  qname="xsd:decimal"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:Text"/>
+        <to  qname="rdfs:Literal"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:Time"/>
+        <to  qname="xsd:time"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:URI"/>
+        <to  qname="xsd:anyURI"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:Integer"/>
+        <to  qname="xsd:integer"/>
+    </mapping>
+    <mapping>
+        <from  qname="epo:Code"/>
+        <to  qname="skos:Concept"/>
+    </mapping>
+
+</mappings>
