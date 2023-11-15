@@ -1,0 +1,261 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-table">
+                <div class="d-table-row">
+                    <div class="d-table-cell cursor-pointer validatorReload">
+                        <h1>UML Model Validator</h1>
+                    </div>
+                </div>
+                <div class="d-table-row">
+                    <div class="pt-3 pb-3">
+                        <p>
+                            This service allows you to validate a <strong>UML Model</strong> against the specifications
+                            presented in the <a
+                                href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html"
+                                target="_blank">SEMIC Style Guide</a>.
+                        </p>
+                        <p>
+                            The content to validate can be provided as a <strong>file</strong> or a <strong>URI
+                            reference</strong>
+                            . A detailed user guide for Interoperability Test Bed is available <a
+                                href="https://www.itb.ec.europa.eu/docs/guides/latest/validatingRDF/index.html#step-6-use-the-validator"
+                                target="_blank">here</a>.
+                        </p>
+                        <p> During the validation of your UML model, specific rules are applied to ensure its compliance
+                            with standards. These rules dictate the structure, relationships, and properties expected
+                            within the model.</p>
+                        <p>
+                            The UML conventions checked by this validator are an extension to the UML conventions
+                            specified in <a
+                                href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html"
+                                target="_blank">SEMIC Style Guide</a>.
+                            To gain insights into the comprehensive set of checking rules employed during validation,
+                            refer to the documentation provided
+                            <a href="https://meaningfy-ws.github.io/model2owl-docs/public-review/checkers/model2owl-checkers.html"
+                               target="_blank">here</a></p>
+
+                        <p><a href="#" data-toggle="modal" data-target="#infoModal">How to Use</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="infoModal" role="dialog">
+    <div class="modal-dialog modal-lg" style="width: 90%; max-width: 1140px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>How to Use</h3>
+            </div>
+            <div class="modal-body">
+                <h2>Validator Options</h2>
+
+                <p>
+                    This validator has 2 options available: basic and advanced. The difference between the two
+                    is the number of configuration files.
+                    In the basic mode, the datatypes are already defined, while in advanced mode,
+                    those must be defined.
+                    For easy use, choose the basic mode.
+                </p>
+                <h2>Configuration Files Boilerplates</h2>
+                <p>Boilerplate templates for the configuration files related to validator options are available as
+                    follows:</p>
+                <ul>
+                    <li><a href="https://github.com/meaningfy-ws/model2owl-validator/tree/main/config_boileplates/basic"
+                           target="_blank">Basic Mode Boilerplates</a></li>
+                    <li>
+                        <a href="https://github.com/meaningfy-ws/model2owl-validator/tree/main/config_boileplates/advanced"
+                           target="_blank">Advanced Mode Boilerplates</a></li>
+                </ul>
+
+                <h2>Naming Conventions and File Types</h2>
+
+                <p>
+                    The validator utilizes an input file and several configuration files, all of which must
+                    adhere to specific conventions for proper functionality.
+                    The majority of files used in this validator are XML files (e.g., <code>my-file.xml</code>)
+                    that includes the input file.
+                    There is only one configuration file, which is an XSLT file that holds variables used by the
+                    system.
+                </p>
+
+                <h3>File names should follow the instructions below:</h3>
+
+                <ul>
+                    <li><code>Config Parameters File: config-parameters.xsl</code></li>
+                    <li><code>Namespaces File: namespaces.xml</code></li>
+                    <li><code>XSD and RDF Datatypes File: xsdAndRdfDataTypes.xml</code></li>
+                </ul>
+                <p>For the input file there is no naming convention, but it should be an XML/XMI file that
+                    follow the conventions presented below</p>
+
+                <h2>Input File</h2>
+
+                <p>
+                    This file must be an XML/XMI file, and make sure that uses XMI version 2.5.1 and UML version
+                    2.5.1.
+                    The namespaces to check in the file are:
+                    <code>uml="http://www.omg.org/spec/UML/20131001"</code> and
+                    <code>xmi="http://www.omg.org/spec/XMI/20131001"</code>.
+                </p>
+
+                <h3>Sample:</h3>
+
+                <code class="code_block">
+                    &lt;?xml version="1.0" encoding="windows-1252"?&gt;<br>
+                    &lt;xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20131001"
+                    xmlns:xmi="http://www.omg.org/spec/XMI/20131001"
+                    xmlns:umldi="http://www.omg.org/spec/UML/20131001/UMLDI"
+                    xmlns:dc="http://www.omg.org/spec/UML/20131001/UMLDC"
+                    xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0"&gt;<br>
+                    &lt;xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1559"/&gt;
+                </code>
+
+                <p>
+                    This should be controlled when the export process is done from your modeling tool used.
+                </p>
+
+                <h2>Configuration Files</h2>
+
+                <p>
+                    As presented above, this validator will use a maximum of three configuration files depending
+                    on the UML model validation option you have selected (check the Validator Options section).
+                </p>
+
+                <h3>Config Parameters File</h3>
+
+                <p>
+                    This is an XSLT file that contains a set of variables used by the system when the model
+                    validation is executed.
+                    Some variables can be changed, while others should not be altered as they are preconfigured.
+                    A boilerplate for config parameters can be found <a
+                        href="https://github.com/meaningfy-ws/model2owl-validator/tree/main/config_boileplates/basic"
+                        target="_blank">here</a>.
+                    The boilerplate includes comments that instruct what can and cannot be changed.
+                </p>
+                <h4>Sample:</h4>
+                <code class="code_block">
+                    &nbsp;&lt;!-- Types of elements and names for attribute types that are acceptable to produce object
+                    properties --&gt;<br>
+                    &nbsp;&lt;xsl:variable name="acceptableTypesForObjectProperties" select="('epo:Identifier',
+                    'rdfs:Literal')"/&gt;<br>
+                    <br>
+                    &nbsp;&lt;!-- Acceptable stereotypes --&gt;<br>
+                    &nbsp;&lt;xsl:variable name="stereotypeValidOnAttributes" select="()"/&gt;<br>
+                    &nbsp;&lt;!-- ... other variables ... --&gt;<br>
+                    <br>
+                    &nbsp;&lt;!-- Allowed characters for a normalized string (characters allowed in a QName) --&gt;<br>
+                    &nbsp;&lt;xsl:variable name="allowedStrings" select="'^[\w\d-_:]+$'"/&gt;<br>
+                </code>
+                <p>
+                    There are two types of data that you can pass in the variables: a list or a string.
+                    For lists, the variable value should always be surrounded by quotes (<code>""</code>), and
+                    the actual values should be enclosed in single quotes (<code>''</code>).
+                    For strings, the principle remains the same:
+                </p>
+
+                <code>
+                    &lt;xsl:variable name="my-variable" select="'my string value'"/&gt;
+                </code>
+
+                <h4>Notes</h4>
+                <ul>
+                    <li>Do not delete variables: Each variable serves a purpose in the validation process.</li>
+                    <li>Maintain variable types: Do not alter the type of variable (e.g., from a list to a string).
+                        If a variable is originally set as a list, it must remain a list.
+                    </li>
+                    <li>If a variable is unnecessary or if you prefer not to impose restrictions, leave the variable
+                        with an empty list or string. See example below:
+                    </li>
+                </ul>
+
+
+                <code class="code_block">
+                    empty string variable <br>
+                    &lt;xsl:variable name="my-variable" select="''"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;empty list variable<br>
+                    &lt;xsl:variable name="stereotypeValidOnAttributes" select="()"/&gt;<br>
+                </code>
+
+
+                <h3>Namespaces File</h3>
+                <p>
+                    This file will hold the namespace values and names used in the model that will be validated.
+                    A boilerplate for config parameters can be found <a
+                        href="https://github.com/meaningfy-ws/model2owl-validator/tree/main/config_boileplates/basic"
+                        target="_blank">here</a>.
+                </p>
+                <h4>Sample:</h4>
+
+                <code class="code_block">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                    &lt;prefixes xmlns="http://publications.europa.eu/ns/"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;prefix name="" value="http://data.europa.eu/a4g/ontology#"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;!-- ... other prefixes ... --&gt;<br>
+                    &lt;/prefixes&gt;
+                </code>
+
+                <h3>XSD and RDF Datatypes File</h3>
+
+                <p>
+                    This file holds declarations of XSD and RDF datatypes. A boilerplate for this file can be
+                    found
+                    <a href="https://github.com/meaningfy-ws/model2owl-validator/tree/main/config_boileplates/advanced"
+                       target="_blank">here</a>.
+                </p>
+
+                <h4>Sample:</h4>
+
+
+                <code class="code_block">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                    &lt;datatypes xmlns="http://publications.europa.eu/ns/"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="xsd" qname="xsd:anyURI"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="xsd" qname="xsd:base64Binary"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="xsd" qname="xsd:boolean"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="xsd" qname="xsd:byte"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="xsd" qname="xsd:date"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="xsd" qname="xsd:dateTime"/&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;datatype namespace="rdfs" qname="rdfs:Literal"/&gt;<br>
+                    &lt;/datatypes&gt;<br>
+                </code>
+
+
+                <p>
+                    The file should include the XML declaration as shown in the sample
+                    (<code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>).
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="mt-4 mb-4">
+<style>
+    code {
+        white-space: pre-line;
+
+    }
+
+    .code_block {
+        display: block;
+        padding: 9.5px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        overflow: auto;
+    }
+</style>
