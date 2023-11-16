@@ -9,31 +9,19 @@
                 </div>
                 <div class="d-table-row">
                     <div class="pt-3 pb-3">
-                        <p>
-                            This service allows you to validate a <strong>UML Model</strong> against the specifications
-                            presented in the <a
-                                href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html"
-                                target="_blank">SEMIC Style Guide</a>.
-                        </p>
-                        <p>
-                            The content to validate can be provided as a <strong>file</strong> or a <strong>URI
-                            reference</strong>
-                            . A detailed user guide for Interoperability Test Bed is available <a
+                        <p>This service allows you to assess the conformance of a&nbsp;<strong>UML Model </strong>with
+                            the <a href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html"
+                                    target="_blank">SEMIC Style Guide</a>. For each UML guideline in the style guide, a
+                            set of rules have been implemented, which asses whether a UML model convention is respected.
+                            These rules specify constraints on the structure, relationships, and properties within the
+                            model. The set of rules employed during validation are documented <a
+                                    href="https://meaningfy-ws.github.io/model2owl-docs/public-review/checkers/model2owl-checkers.html"
+                                    target="_blank">here</a>.</p>
+
+                        <p>The content to validate can be provided as a <strong>file</strong> or a <strong>URI
+                            reference</strong>. Documentation on using the Interoperability Test Bed is available <a
                                 href="https://www.itb.ec.europa.eu/docs/guides/latest/validatingRDF/index.html#step-6-use-the-validator"
-                                target="_blank">here</a>.
-                        </p>
-                        <p> During the validation of your UML model, specific rules are applied to ensure its compliance
-                            with standards. These rules dictate the structure, relationships, and properties expected
-                            within the model.</p>
-                        <p>
-                            The UML conventions checked by this validator are an extension to the UML conventions
-                            specified in <a
-                                href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html"
-                                target="_blank">SEMIC Style Guide</a>.
-                            To gain insights into the comprehensive set of checking rules employed during validation,
-                            refer to the documentation provided
-                            <a href="https://meaningfy-ws.github.io/model2owl-docs/public-review/checkers/model2owl-checkers.html"
-                               target="_blank">here</a></p>
+                                target="_blank">here</a>.</p>
 
                         <p><a href="#" data-toggle="modal" data-target="#infoModal">How to Use</a></p>
                     </div>
@@ -55,9 +43,9 @@
                 <p>
                     This validator has 2 options available: basic and advanced. The difference between the two
                     is the number of configuration files.
-                    In the basic mode, the datatypes are already defined, while in advanced mode,
-                    those must be defined.
-                    For easy use, choose the basic mode.
+                    In the basic mode, only the namespaces are to be defined, while in advanced mode,
+                    multiple configuration files must be defined.
+                    For easy use, choose the basic mode, download the boilerplates for the necessary config and change them accordingly.
                 </p>
                 <h2>Configuration Files Boilerplates</h2>
                 <p>Boilerplate templates for the configuration files related to validator options are available as

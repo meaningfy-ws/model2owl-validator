@@ -27,12 +27,14 @@
 
     <!-- types of elements and names for attribute types that are acceptable to produce object properties -->
     <xsl:variable name="acceptableTypesForObjectProperties"
-        select="('epo:Identifier', 'rdfs:Literal')"/>
+        select="('adms:Identifier', 'rdfs:Literal')"/>
+
+
     <!-- Acceptable stereotypes -->
     <xsl:variable name="stereotypeValidOnAttributes" select="()"/>
     <xsl:variable name="stereotypeValidOnObjects" select="()"/>
     <xsl:variable name="stereotypeValidOnGeneralisations"
-        select="('Disjoint', 'Equivalent')"/>
+        select="('Disjoint', 'Equivalent', 'Complete')"/>
     <xsl:variable name="stereotypeValidOnAssociations" select="()"/>
     <xsl:variable name="stereotypeValidOnDependencies" select="('Disjoint')"/>
     <xsl:variable name="stereotypeValidOnClasses" select="('Abstract')"/>
@@ -40,7 +42,7 @@
     <xsl:variable name="stereotypeValidOnEnumerations" select="()"/>
     <xsl:variable name="stereotypeValidOnPackages" select="()"/>
     <xsl:variable name="abstractClassesStereotypes"
-        select="('Abstract', 'abstract class', 'abstract')"/>
+        select="('Abstract')"/>
     
     <!--Allowed characters for a normalized string (characters allowed in a Qname). This should be a regex expression.-->
     <xsl:variable name="allowedStrings" select="'^[\w\d-_:]+$'"/>

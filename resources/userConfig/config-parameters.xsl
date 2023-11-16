@@ -27,12 +27,14 @@
 
     <!-- types of elements and names for attribute types that are acceptable to produce object properties -->
     <xsl:variable name="acceptableTypesForObjectProperties"
-        select="('epo:Identifier', 'rdfs:Literal')"/>
+        select="('adms:Identifier', 'rdfs:Literal')"/>
+
+
     <!-- Acceptable stereotypes -->
     <xsl:variable name="stereotypeValidOnAttributes" select="()"/>
     <xsl:variable name="stereotypeValidOnObjects" select="()"/>
     <xsl:variable name="stereotypeValidOnGeneralisations"
-        select="('Disjoint', 'Equivalent')"/>
+        select="('Disjoint', 'Equivalent', 'Complete')"/>
     <xsl:variable name="stereotypeValidOnAssociations" select="()"/>
     <xsl:variable name="stereotypeValidOnDependencies" select="('Disjoint')"/>
     <xsl:variable name="stereotypeValidOnClasses" select="('Abstract')"/>
@@ -40,8 +42,8 @@
     <xsl:variable name="stereotypeValidOnEnumerations" select="()"/>
     <xsl:variable name="stereotypeValidOnPackages" select="()"/>
     <xsl:variable name="abstractClassesStereotypes"
-        select="('Abstract', 'abstract class', 'abstract')"/>
-
+        select="('Abstract')"/>
+    
     <!--Allowed characters for a normalized string (characters allowed in a Qname). This should be a regex expression.-->
     <xsl:variable name="allowedStrings" select="'^[\w\d-_:]+$'"/>
 
@@ -52,14 +54,12 @@
 <!--    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
     <!-- a set of prefix-baseURI definitions -->
     <xsl:variable name="namespacePrefixes" select="fn:doc('namespaces.xml')"/>
-    <!-- a mapping between UML atomic types to XSD datatypes  -->
-    <xsl:variable name="umlDataTypesMapping" select="fn:doc('umlToXsdDataTypes.xml')"/>
     <!-- XSD datatypes that conform to OWL2 requirements   -->
     <xsl:variable name="xsdAndRdfDataTypes" select="fn:doc('xsdAndRdfDataTypes.xml')"/>
-    <!--    set default namespace interpretation for lexical Qnames that are not prefix:localSegment or :localSegment. If this
+    <!--    set default namespace interpretation for lexical Qnames that are not prefix:localSegment or :localSegment. If this 
     is set to true localSegment will transform to :localSegment-->
     <xsl:variable name="defaultNamespaceInterpretation" select="fn:true()"/>
-    <!-- Ontology base URI, configure as necessary. Do not use a trailing local delimiter
+    <!-- Ontology base URI, configure as necessary. Do not use a trailing local delimiter 
         like in the namespace definition-->
     <xsl:variable name="base-ontology-uri" select="()"/>
     <xsl:variable name="base-shape-uri" select="()"/>
