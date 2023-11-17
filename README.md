@@ -15,3 +15,9 @@ This validator has 2 options available: basic and advanced. The difference betwe
 configuration files. In the basic mode, only the namespaces are to be defined, while in advanced mode, multiple
 configuration files must be defined. Check out the config_boilerplates folder in this repository to get the 
 necessary configuration files for each mode.
+
+## Useful Links
+* [UML validator](https://www.itb.ec.europa.eu/model2owl/upload)
+* [REST API](https://www.itb.ec.europa.eu/vitb/swagger-ui/index.html) - as domain use  **model2owl**
+* [Validation via SOAP web service API docs](https://www.itb.ec.europa.eu/docs/guides/latest/validatingXML/index.html#validation-via-soap-web-service-api)
+* [SOAP API](https://www.itb.ec.europa.eu/model2owl/api/validation?wsdl)
